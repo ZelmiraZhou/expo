@@ -1,0 +1,14 @@
+with (import ../. {});
+
+mkShell {
+  LANG="en_US.UTF-8";
+  GRADLE_OPTS="-Dorg.gradle.jvmargs=\"-Xmx6114m -XX:+HeapDumpOnOutOfMemoryError\"";
+  JAVA_HOME=openjdk8;
+  ANDROID_HOME="${androidenv.ourSDK}/libexec";
+  ANDROID_NDK_HOME="${androidenv.androidndk_10e}/libexec/android-ndk-r10e";
+  nativeBuildInputs = [
+    androidenv.ourSDK
+    nodejs-8_x
+    openjdk8
+  ];
+}
